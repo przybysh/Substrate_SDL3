@@ -22,7 +22,7 @@ FetchContent_Declare(SDL3
 FetchContent_MakeAvailable(SDL3)
 
 # type in here all .cpp files of your project
-set(MAIN_SRC_FILES substrate.cpp)
+set(MAIN_SRC_FILES main.cpp)
 
 
 # make executable 
@@ -34,12 +34,3 @@ add_executable(${PROJECT_NAME} ${MAIN_SRC_FILES})
 # now link your executable with all the depenedencies of your project
 target_link_libraries(${PROJECT_NAME} 
                         PRIVATE SDL3::SDL3)
-
-install(TARGETS ${PROJECT_NAME}
-                        RUNTIME ARCHIVE LIBRARY RUNTIME FRAMEWORK BUNDLE PUBLIC_HEADER RESOURCE)
-install(TARGETS ${PROJECT_NAME}
-                        COMPONENT ${PROJECT_NAME}
-                        RUNTIME_DEPENDENCIES
-                        PRE_EXCLUDE_REGEXES "api-ms-" "ext-ms-"
-                        POST_EXCLUDE_REGEXES ".*system32/.*\\.dll"
-                        DIRECTORIES $<TARGET_FILE_DIR:${PROJECT_NAME}>)
