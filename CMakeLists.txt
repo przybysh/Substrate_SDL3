@@ -22,8 +22,13 @@ FetchContent_Declare(SDL3
 FetchContent_MakeAvailable(SDL3)
 
 # type in here all .cpp files of your project
-set(MAIN_SRC_FILES main.cpp)
+set(MAIN_SRC_FILES main.cpp substrate.cpp)
 
+
+# on Web targets, we need CMake to generate a HTML webpage. 
+if(EMSCRIPTEN)
+  set(CMAKE_EXECUTABLE_SUFFIX ".html" CACHE INTERNAL "")
+endif()
 
 # make executable 
 # first parameter it's a executbale name that will be equal to whatever have you set
