@@ -46,4 +46,3 @@ On Linux change the path separator to proper one.
 
 ## Support
 If you like it please support on [buycoffe](https://buycoffee.to/przybysh)
-<a href="https://buycoffee.to/przybysh" target="_blank"><img src="https://buycoffee.to/img/share-button-primary.png" style="width: 351px; height: 92px" alt="Postaw mi kawę na buycoffee.to"></a>
